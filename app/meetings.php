@@ -74,5 +74,5 @@ $smarty->assign('messages',$msgs);
 $smarty->assign('infos',$infos);
 
 
-$smarty->display(_ROOT_PATH.'/app/calc_view.tpl');
+$smarty->display(_ROOT_PATH.'/app/meetings.tpl');
 // $smarty->display(_APP_URL.'/app/calc_view.tpl');
