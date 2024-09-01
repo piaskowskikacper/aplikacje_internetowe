@@ -2,23 +2,20 @@
 
 {block name=content}
 
-        <h2 class="content-head is-center">Kalkulator kredytowy</h2>
+        <h2 class="content-head is-center">Organizator spotkań </h2>
 
         <div class="pure-g">
             <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
-                <form class="pure-form pure-form-stacked" action="{$app_url}/app/calc.php" method="post"> 
+                <form class="pure-form pure-form-stacked" action="{$app_url}/app/meetings.php" method="post"> 
                     <fieldset>
 
-					<label for="kwota">Kwota kredytu: </label>
-					<input id="kwota" type="text" name="kwota" value="{$form['kwota']}" /><br />
+					<label for="login">Login: </label>
+					<input id="login" type="text" name="login" value="{$form['login']}"  required /><br />
 
-					<label for="msc">Czas trwania kredytu w miesiącach: </label>
-					<input id="msc" type="text" name="msc" value="{$form['msc']}" /><br />
+					<label for="password">Hasło: </label>
+					<input id="password" type="password" name="password" value="{$form['password']}" required /><br />
 
-					<label for="opr">Oprocentowanie kredytu: </label>
-					<input id="opr" type="text" name="opr" value="{$form['opr']}" /><br />
-
-                    <button type="submit" class="pure-button">Oblicz</button>
+                    <button type="submit" class="pure-button">Zaloguj się</button>
 
                     </fieldset>
                 </form>

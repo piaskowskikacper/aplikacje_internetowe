@@ -1,78 +1,79 @@
 <?php
 require_once dirname(__FILE__).'/../config.php';
-
 require_once _ROOT_PATH.'/lib/smarty/smarty.class.php';
+require_once dirname(__FILE__).'/../db.php';
 
+function getParams(&$form) {
+    $form['login'] = isset($_REQUEST['login']) ? $_REQUEST['login'] : null;
+    $form['password'] = isset($_REQUEST['password']) ? $_REQUEST['password'] : null;
+}
 
-function getParams(&$form){
+function validate(&$form, &$msgs) {
+    // Sprawdzenie, czy login i hasło zostały podane
+    if (!isset($form['login']) || !isset($form['password'])) {
+        $msgs[] = 'Nie podano loginu lub hasła.';
+        return false;
+    }
 
-	$form['kwota'] = isset($_REQUEST['kwota']) ? $_REQUEST['kwota'] : null;
-	$form['msc'] = isset($_REQUEST['msc']) ? $_REQUEST['msc'] : null;
-	$form['opr'] = isset($_REQUEST['opr']) ? $_REQUEST['opr'] : null;
+    // Sprawdzenie, czy pola nie są puste
+    if ($form['login'] === '' || $form['password'] === '') {
+        $msgs[] = 'Login i hasło są wymagane.';
+        return false;
+    }
 
+    return true;
+}
+
+function process(&$form, &$infos, &$msgs) {
+    global $pdo; // Dodanie globalnej zmiennej $pdo
+
+    if (validate($form, $msgs)) {
+        $login = $form['login'];
+        $password = $form['password'];
+
+        try {
+            // Sprawdzenie, czy użytkownik istnieje w bazie danych
+            $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :login");
+            $stmt->execute(['login' => $login]);
+            $user = $stmt->fetch();
+
+            if ($user && $user['password'] === $password) { // Porównanie hasła bez hashowania
+                // Zalogowanie użytkownika
+                session_start();
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['username'] = $user['username'];
+                
+                $infos[] = 'Zalogowano pomyślnie. Przekierowanie na stronę główną...';
+
+                header("Location: dashboard.php"); // Przekierowanie na stronę główną
+                exit;
+            } else {
+                $msgs[] = 'Niepoprawny login lub hasło.';
+            }
+        } catch (PDOException $e) {
+            $msgs[] = 'Błąd połączenia z bazą danych: ' . $e->getMessage();
+        }
+    }
 }
 
 
-function validate(&$form,&$infos,&$msgs,&$hide_intro){
-
-	if ( ! (isset($form['kwota']) && isset($form['msc']) && isset($form['opr']) )) return false; 
-
-	$hide_intro = true;
-
-	$infos [] = 'Przekazano parametry.';
-
-	if ($form['kwota'] == "") $msgs [] = 'Nie podano kwoty';
-	if ($form['msc'] == "") $msgs [] = 'Nie podano czasu trwania kredytu';
-	if ($form['opr'] == "") $msgs [] = 'Nie podano oprocentowania';
-
-	if (count($msgs)==0){
-		if (! is_numeric($form['kwota'])) $msgs [] = 'Kwota nie jest liczbą całkowitą';
-		if (! is_numeric($form['msc'])) $msgs [] = 'Ilość miesięcy nie jest liczbą całkowitą';
-		if (! is_numeric($form['opr'])) $msgs [] = 'Oprocentowanie nie jest liczbą całkowitą';
-	}
-
-	if (count($msgs)>0) return false;
-	else return true;
-	
-}
-
-
-function process(&$form,&$infos,&$msgs,&$result){
-
-	$infos [] = 'Parametry poprawne. Wykonuję obliczenia.';
-
-	$form['kwota'] = floatval($form['kwota']);
-	$form['msc'] = floatval($form['msc']);
-	$form['opr'] = floatval($form['opr']);
-
-	$result = (($form['kwota']/$form['msc']))*(($form['opr']/100)+1);
-
-}
-
-$form = null;
-$infos = array();
-$msgs = array();
-$result = null;
+$form = [];
+$infos = [];
+$msgs = [];
 
 getParams($form);
-if(validate($form,$infos,$msgs,$hide_intro)) {
-	process($form,$infos,$msgs,$result)	;
-}
-
+process($form, $infos, $msgs);
 
 $smarty = new Smarty();
 
-$smarty->assign('app_url',_APP_URL);
-$smarty->assign('root_path',_ROOT_PATH);
-$smarty->assign('page_title','Zadanie - szablony');
-$smarty->assign('page_description','Profesjonalne szablonowanie oparte na bibliotece smarty');
-$smarty->assign('page_header','Szablony smarty');
+$smarty->assign('app_url', _APP_URL);
+$smarty->assign('root_path', _ROOT_PATH);
+$smarty->assign('page_title', 'Projekt zaliczeniowy');
+$smarty->assign('page_description', 'Organizator spotkań');
+$smarty->assign('page_header', 'Szablony smarty');
 
-$smarty->assign('form',$form);
-$smarty->assign('result',$result);
-$smarty->assign('messages',$msgs);
-$smarty->assign('infos',$infos);
-
+$smarty->assign('form', $form);
+$smarty->assign('messages', $msgs);
+$smarty->assign('infos', $infos);
 
 $smarty->display(_ROOT_PATH.'/app/meetings.tpl');
-// $smarty->display(_APP_URL.'/app/calc_view.tpl');
