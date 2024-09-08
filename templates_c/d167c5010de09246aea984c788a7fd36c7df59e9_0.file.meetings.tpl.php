@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-09-01 21:26:23
+/* Smarty version 4.3.4, created on 2024-09-08 14:23:43
   from 'E:\Xampp\htdocs\do wyslania\projekt\app\meetings.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_66d4bfdf01bb42_71481016',
+  'unifunc' => 'content_66dd974f39a617_42703144',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd167c5010de09246aea984c788a7fd36c7df59e9' => 
     array (
       0 => 'E:\\Xampp\\htdocs\\do wyslania\\projekt\\app\\meetings.tpl',
-      1 => 1725218750,
+      1 => 1725798220,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66d4bfdf01bb42_71481016 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66dd974f39a617_42703144 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16782883166d4bfdf00c8b8_98884285', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_40427800466dd974f380dc6_25227078', 'content');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../templates/main.tpl");
 }
 /* {block 'content'} */
-class Block_16782883166d4bfdf00c8b8_98884285 extends Smarty_Internal_Block
+class Block_40427800466dd974f380dc6_25227078 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_16782883166d4bfdf00c8b8_98884285',
+    0 => 'Block_40427800466dd974f380dc6_25227078',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -65,6 +65,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
                     </fieldset>
                 </form>
+
+                <p>Nie masz konta? <a href="./app/register.php">Zarejestruj się</a></p>
 
             </div>
 

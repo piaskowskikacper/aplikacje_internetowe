@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-09-08 13:46:00
+/* Smarty version 4.3.4, created on 2024-09-08 14:45:50
   from 'E:\Xampp\htdocs\do wyslania\projekt\app\dashboard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_66dd8e787e28d8_67142955',
+  'unifunc' => 'content_66dd9c7eb97be5_48227927',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5740ac144f00680bf9c1b4bc8431d0e3635404ca' => 
     array (
       0 => 'E:\\Xampp\\htdocs\\do wyslania\\projekt\\app\\dashboard.tpl',
-      1 => 1725795959,
+      1 => 1725799548,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66dd8e787e28d8_67142955 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66dd9c7eb97be5_48227927 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_37726967966dd8e787d8a16_22445403', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_201657422966dd9c7eb88730_80522347', 'content');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../templates/main.tpl");
 }
 /* {block 'content'} */
-class Block_37726967966dd8e787d8a16_22445403 extends Smarty_Internal_Block
+class Block_201657422966dd9c7eb88730_80522347 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_37726967966dd8e787d8a16_22445403',
+    0 => 'Block_201657422966dd9c7eb88730_80522347',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -58,6 +58,10 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     <section>
         <p><?php echo $_smarty_tpl->tpl_vars['welcomeMessage']->value;?>
 </p>
+
+        <nav>
+            <a href="logout.php">Wyloguj się</a>
+        </nav>
 
         <h2>Nadchodzące spotkania</h2>
         <ul>

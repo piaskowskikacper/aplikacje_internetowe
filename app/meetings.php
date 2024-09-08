@@ -1,7 +1,6 @@
 <?php
 require_once dirname(__FILE__).'/../config.php';
 require_once _ROOT_PATH.'/lib/smarty/smarty.class.php';
-require_once dirname(__FILE__).'/../db.php';
 
 function getParams(&$form) {
     $form['login'] = isset($_REQUEST['login']) ? $_REQUEST['login'] : null;
@@ -37,7 +36,7 @@ function process(&$form, &$infos, &$msgs) {
             $stmt->execute(['login' => $login]);
             $user = $stmt->fetch();
 
-            if ($user && $user['password'] === $password) { // Porównanie hasła bez hashowania
+            if ($user && password_verify($password, $user['password'])) { // Porównanie hasła bez hashowania
                 // Zalogowanie użytkownika
                 session_start();
                 $_SESSION['user_id'] = $user['id'];

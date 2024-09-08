@@ -14,6 +14,10 @@
     <section>
         <p>{$welcomeMessage}</p>
 
+        <nav>
+            <a href="logout.php">Wyloguj się</a>
+        </nav>
+
         <h2>Nadchodzące spotkania</h2>
         <ul>
             {foreach from=$upcomingMeetings item=meeting}

@@ -20,6 +20,8 @@
                     </fieldset>
                 </form>
 
+                <p>Nie masz konta? <a href="./app/register.php">Zarejestruj się</a></p>
+
             </div>
 
 

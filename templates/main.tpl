@@ -10,21 +10,24 @@
 </head>
 <body>
 
-<div class="header">
 
-    <h1>{$page_title|default:"Tytuł domyślny"}</h1>
-    <h2>{$page_header|default:"Tytuł domyślny"}</h2>
-    <p>
-        {$page_description|default:"Tytuł domyślny"}
-    </p>    
+<div class="return-index" href="index.php">
+    <div class="header">
 
-</div>
+        <h1>{$page_title|default:"Tytuł domyślny"}</h1>
+        <h2>{$page_header|default:"Tytuł domyślny"}</h2>
+        <p>
+            {$page_description|default:"Tytuł domyślny"}
+        </p>    
 
-<div class="splash-container" style="background-image: url('{$app_url}/styles/bg.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
-    <div class="splash">
-        <h1 class="splash-head">Kacper Piaskowski</h1>
     </div>
-</div>
+
+    <div class="splash-container" style="background-image: url('{$app_url}/styles/bg.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
+        <div class="splash">
+            <h1 class="splash-head">Kacper Piaskowski</h1>
+        </div>
+    </div>
+<div>
 
 <div class="content-wrapper">
 
@@ -33,7 +36,7 @@
     </div>
 
     <div class="footer l-box is-center">
-        {block name=footer} Template made with love by the Pure Team. {/block}
+        {block name=footer} <p>&copy; 2024 System Zarządzania Spotkaniami</p> {/block}
     </div>
 
 </div>
