@@ -2,6 +2,7 @@
 
 {block name=content}
 
+<a href="dashboard.php" class="btn btn-secondary">Powrót do panelu głównego</a>
 
         <h2 class="content-head is-center">Tworzenie spotkania</h2>
 

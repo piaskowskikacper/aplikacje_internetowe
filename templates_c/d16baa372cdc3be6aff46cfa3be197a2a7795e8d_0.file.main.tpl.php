@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-09-08 14:37:56
+/* Smarty version 4.3.4, created on 2024-09-08 15:29:31
   from 'E:\Xampp\htdocs\do wyslania\projekt\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_66dd9aa4c82b75_13735047',
+  'unifunc' => 'content_66dda6bb3ffda7_06159371',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd16baa372cdc3be6aff46cfa3be197a2a7795e8d' => 
     array (
       0 => 'E:\\Xampp\\htdocs\\do wyslania\\projekt\\templates\\main.tpl',
-      1 => 1725799075,
+      1 => 1725802163,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66dd9aa4c82b75_13735047 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66dda6bb3ffda7_06159371 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -39,7 +39,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 <body>
 
 
-<div class="return-index" href="index.php">
+<div class="return-index" href='index.php'>
     <div class="header">
 
         <h1><?php echo (($tmp = $_smarty_tpl->tpl_vars['page_title']->value ?? null)===null||$tmp==='' ? "Tytuł domyślny" ?? null : $tmp);?>
@@ -65,14 +65,14 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 
     <div class="content">
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_152408716466dd9aa4c809f1_35688855', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_206544735466dda6bb3fe212_55907573', 'content');
 ?>
 
     </div>
 
     <div class="footer l-box is-center">
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_173899382166dd9aa4c82041_30495069', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_169374907866dda6bb3ff508_23118094', 'footer');
 ?>
 
     </div>
@@ -85,12 +85,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_173899382166dd9aa4
 </html>
 <?php }
 /* {block 'content'} */
-class Block_152408716466dd9aa4c809f1_35688855 extends Smarty_Internal_Block
+class Block_206544735466dda6bb3fe212_55907573 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_152408716466dd9aa4c809f1_35688855',
+    0 => 'Block_206544735466dda6bb3fe212_55907573',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -100,17 +100,17 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'footer'} */
-class Block_173899382166dd9aa4c82041_30495069 extends Smarty_Internal_Block
+class Block_169374907866dda6bb3ff508_23118094 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_173899382166dd9aa4c82041_30495069',
+    0 => 'Block_169374907866dda6bb3ff508_23118094',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
- Template made with love by the Pure Team. <?php
+ <p>&copy; 2024 System Zarządzania Spotkaniami</p> <?php
 }
 }
 /* {/block 'footer'} */

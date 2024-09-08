@@ -2,22 +2,26 @@
 
 {block name=content}
 
+        <a href="dashboard.php" class="btn btn-secondary">Powrót do panelu głównego</a>
 
         <h2 class="content-head is-center">Odpowiedz na zaproszenie</h2>
 
             <div class="l-box-lrg pure-u-1 pure-u-med-3-5">
-{if isset($messages)}
-        <ul>
-            {foreach from=$messages item=message}
-                <li>{$message}</li>
-            {/foreach}
-        </ul>
-    {/if}
+
+        {if isset($messages)}
+                <ul>
+                    {foreach from=$messages item=message}
+                        <li>{$message}</li>
+                    {/foreach}
+                </ul>
+            {/if}
 
 </div>
+
+
         <div class="pure-g">
             <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
-                <form class="pure-form pure-form-stacked" action="{$app_url}/app/create_meeting.php" method="post"> 
+                <form class="pure-form pure-form-stacked" action="{$app_url}/app/respond_invitation.php" method="post"> 
                     <fieldset>
 
                     <label for="invitation_id">ID zaproszenia:</label>
@@ -32,6 +36,7 @@
                     <input type="submit" value="Zatwierdź">
                     </fieldset>
                 </form>
+
 
 
             </div>

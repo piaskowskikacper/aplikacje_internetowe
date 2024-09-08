@@ -2,6 +2,7 @@
 
 {block name=content}
 
+<a href="index.php" class="btn btn-secondary">Powrót do logowania</a>
 
         <h2 class="content-head is-center">Rejestracja</h2>
 

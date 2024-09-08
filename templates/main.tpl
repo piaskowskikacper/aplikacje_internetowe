@@ -11,7 +11,7 @@
 <body>
 
 
-<div class="return-index" href="index.php">
+<div class="return-index" href=".index.php">
     <div class="header">
 
         <h1>{$page_title|default:"Tytuł domyślny"}</h1>
