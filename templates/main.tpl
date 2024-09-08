@@ -20,7 +20,7 @@
 
 </div>
 
-<div class="splash-container" style="background-image: url('{$app_url}/styles/leniwiec.jpg'); background-repeat: no-repeat; background-size: cover;">
+<div class="splash-container" style="background-image: url('{$app_url}/styles/bg.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
     <div class="splash">
         <h1 class="splash-head">Kacper Piaskowski</h1>
     </div>
