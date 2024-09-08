@@ -3,7 +3,7 @@
 {block name=content}
 
 
-        <h2 class="content-head is-center">Rejestracja</h2>
+        <h2 class="content-head is-center">Tworzenie spotkania</h2>
 
             <div class="l-box-lrg pure-u-1 pure-u-med-3-5">
 {if isset($messages)}
