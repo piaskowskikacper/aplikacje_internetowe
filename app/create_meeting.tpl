@@ -30,10 +30,11 @@
                     <label for="meeting_date">Data spotkania:</label>
                     <input type="datetime-local" id="meeting_date" name="meeting_date" required>
                     
-                    <input type="submit" value="Utwórz spotkanie">
+                    <input type="submit" class="pure-button" value="Utwórz spotkanie">
                     </fieldset>
                 </form>
 
+            <p padding: '5px'></p>
 
             </div>
 

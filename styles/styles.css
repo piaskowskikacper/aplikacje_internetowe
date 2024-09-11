@@ -284,3 +284,78 @@ a.pure-button-primary {
         font-size: 300%;
     }
 }
+
+
+/* Przycisk podstawowy */
+.btn {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+/* Przycisk sekundarny */
+.btn-secondary {
+    background-color: #6c757d;
+    color: #ffffff;
+    border: 1px solid #6c757d;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: #5a6268;
+    border-color: #545b62;
+    color: #ffffff;
+    text-decoration: none;
+    outline: none;
+}
+
+/* Przycisk sukcesu */
+.btn-success {
+    background-color: #28a745;
+    color: #ffffff;
+    border: 1px solid #28a745;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+    background-color: #218838;
+    border-color: #1e7e34;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Przycisk niepowodzenia */
+.btn-danger {
+    background-color: #dc3545;
+    color: #ffffff;
+    border: 1px solid #dc3545;
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+    background-color: #c82333;
+    border-color: #bd2130;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Przycisk neutralny */
+.btn-neutral {
+    background-color: #f8f9fa;
+    color: #212529;
+    border: 1px solid #ced4da;
+}
+
+.btn-neutral:hover,
+.btn-neutral:focus {
+    background-color: #e2e6ea;
+    border-color: #dae0e5;
+    color: #212529;
+    text-decoration: none;
+}

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-09-11 20:08:53
+/* Smarty version 4.3.4, created on 2024-09-11 20:52:12
   from 'E:\Xampp\htdocs\do wyslania\projekt\app\invite.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_66e1dcb53c2a27_93087184',
+  'unifunc' => 'content_66e1e6dc4707c2_82595245',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6c234d7ff2d9179df075111d4f83b1d123b42e16' => 
     array (
       0 => 'E:\\Xampp\\htdocs\\do wyslania\\projekt\\app\\invite.tpl',
-      1 => 1726078084,
+      1 => 1726080731,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66e1dcb53c2a27_93087184 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66e1e6dc4707c2_82595245 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_157692434566e1dcb53b4df7_29350431', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_136713010466e1e6dc45ba72_62121483', 'content');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../templates/main.tpl");
 }
 /* {block 'content'} */
-class Block_157692434566e1dcb53b4df7_29350431 extends Smarty_Internal_Block
+class Block_136713010466e1e6dc45ba72_62121483 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_157692434566e1dcb53b4df7_29350431',
+    0 => 'Block_136713010466e1e6dc45ba72_62121483',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -111,12 +111,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </div>
 
                         <div>
-                            <button type="submit">Wyślij zaproszenie</button>
+                            <button type="submit" class="pure-button">Wyślij zaproszenie</button>
                         </div>
 
                     </fieldset>
                 </form>
 
+            <p padding: '5px'></p>
 
             </div>
 

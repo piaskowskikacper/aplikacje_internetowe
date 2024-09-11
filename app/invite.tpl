@@ -41,12 +41,13 @@
                         </div>
 
                         <div>
-                            <button type="submit">Wyślij zaproszenie</button>
+                            <button type="submit" class="pure-button">Wyślij zaproszenie</button>
                         </div>
 
                     </fieldset>
                 </form>
 
+            <p padding: '5px'></p>
 
             </div>
 

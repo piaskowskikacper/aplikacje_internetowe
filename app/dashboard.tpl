@@ -16,47 +16,73 @@
 
 <h2>Witaj, {$username}</h2>
 
-<!-- Informacja o liczbie nieodpowiedzianych zaproszeń -->
-<p>Masz <strong>{$pending_invitations}</strong> zaproszeń, na które jeszcze nie odpowiedziałeś.</p>
+    <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+        {if isset($pending_invitations)}
+            <p>Masz {$pending_invitations} zaproszeń, na które nie odpowiedziałeś.</p>
+        {/if}
 
-<!-- Sekcja z nadchodzącymi spotkaniami -->
-<h3>Nadchodzące zaakceptowane spotkania:</h3>
+        <h3>Nadchodzące spotkania</h3>
+        {if $upcoming_meetings|@count > 0}
+            <table class="pure-table">
+                <thead>
+                    <tr>
+                        <th>Tytuł spotkania</th>
+                        <th>Data spotkania</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {foreach from=$upcoming_meetings item=meeting}
+                        <tr>
+                            <td>{$meeting.meeting_title}</td>
+                            <td>{$meeting.meeting_date}</td>
+                        </tr>
+                    {/foreach}
+                </tbody>
+            </table>
+        {else}
+            <p>Nie masz nadchodzących spotkań.</p>
+        {/if}
 
-{if $accepted_meetings|@count > 0}
-    <ul>
-    {foreach from=$accepted_meetings item=meeting}
-        <li>
-            <strong>{$meeting.title}</strong> - {$meeting.meeting_date|date_format:"%Y-%m-%d %H:%M"}
-        </li>
-    {/foreach}
-    </ul>
-{else}
-    <p>Nie masz żadnych nadchodzących spotkań.</p>
-{/if}
+        <h3>Twoje spotkania</h3>
+        {if $created_meetings|@count > 0}
+            <table class="pure-table">
+                <thead>
+                    <tr>
+                        <th>Tytuł spotkania</th>
+                        <th>Data spotkania</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {foreach from=$created_meetings item=meeting}
+                        <tr>
+                            <td>{$meeting.meeting_title}</td>
+                            <td>{$meeting.meeting_date}</td>
+                        </tr>
+                    {/foreach}
+                </tbody>
+            </table>
+        {else}
+            <p>Nie masz utworzonych spotkań.</p>
+        {/if}
+    </div>
 
 <!-- Przycisk do tworzenia spotkań -->
-<a href="create_meeting.php" class="btn btn-primary">Utwórz spotkanie</a>
+<a href="create_meeting.php"><button  class="btn btn-secondary">Utwórz spotkanie</button></a>
+
 
 <!-- Przycisk do wysyłania zaproszeń -->
-<a href="invite.php" class="btn btn-secondary">Wyślij zaproszenia</a>
+<a href="invite.php"><button class="btn btn-secondary">Wyślij zaproszenia</button></a>
 
 <!-- Przycisk do zarządzania zaproszeniami -->
-<a href="respond_invitation.php" class="btn btn-success">Zarządzaj zaproszeniami</a>
+<a href="respond_invitation.php"><button  class="btn btn-secondary">Zarządzaj zaproszeniami</button></a>
 
 <!-- Przycisk wylogowania -->
-<a href="logout.php" class="btn btn-danger">Wyloguj się</a>
+<a href="logout.php"><button  class="btn btn-danger">Wyloguj się</button></a>
 
 
 <div class="pure-g">
 <p padding: '5px'></p>
 </div>
 
-
-
-            </div>
-
-
-
-        </div>
 
 {/block}
