@@ -16,7 +16,23 @@
 
 <h2>Witaj, {$username}</h2>
 
+<!-- Informacja o liczbie nieodpowiedzianych zaproszeń -->
+<p>Masz <strong>{$pending_invitations}</strong> zaproszeń, na które jeszcze nie odpowiedziałeś.</p>
 
+<!-- Sekcja z nadchodzącymi spotkaniami -->
+<h3>Nadchodzące zaakceptowane spotkania:</h3>
+
+{if $accepted_meetings|@count > 0}
+    <ul>
+    {foreach from=$accepted_meetings item=meeting}
+        <li>
+            <strong>{$meeting.title}</strong> - {$meeting.meeting_date|date_format:"%Y-%m-%d %H:%M"}
+        </li>
+    {/foreach}
+    </ul>
+{else}
+    <p>Nie masz żadnych nadchodzących spotkań.</p>
+{/if}
 
 <!-- Przycisk do tworzenia spotkań -->
 <a href="create_meeting.php" class="btn btn-primary">Utwórz spotkanie</a>
@@ -27,8 +43,9 @@
 <!-- Przycisk do zarządzania zaproszeniami -->
 <a href="respond_invitation.php" class="btn btn-success">Zarządzaj zaproszeniami</a>
 
-<!-- Opcjonalnie dodaj wylogowanie -->
+<!-- Przycisk wylogowania -->
 <a href="logout.php" class="btn btn-danger">Wyloguj się</a>
+
 
 <div class="pure-g">
 <p padding: '5px'></p>
