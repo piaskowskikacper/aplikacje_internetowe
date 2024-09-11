@@ -18,7 +18,7 @@
 </div>
         <div class="pure-g">
             <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
-                <form class="pure-form pure-form-stacked" action="{$app_url}/app/invite.php" method="post"> 
+                <form class="pure-form pure-form-stacked" action="{$app_url}/app/send_invitation.php" method="post"> 
                     <fieldset>
 
                     <div>

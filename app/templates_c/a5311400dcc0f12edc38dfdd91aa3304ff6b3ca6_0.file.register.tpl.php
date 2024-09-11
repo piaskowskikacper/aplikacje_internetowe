@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-09-08 14:32:27
+/* Smarty version 4.3.4, created on 2024-09-11 20:19:15
   from 'E:\Xampp\htdocs\do wyslania\projekt\app\register.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_66dd995bd92622_28203791',
+  'unifunc' => 'content_66e1df232837e1_52002978',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a5311400dcc0f12edc38dfdd91aa3304ff6b3ca6' => 
     array (
       0 => 'E:\\Xampp\\htdocs\\do wyslania\\projekt\\app\\register.tpl',
-      1 => 1725798745,
+      1 => 1725802417,
       2 => 'file',
     ),
   ),
@@ -20,31 +20,32 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66dd995bd92622_28203791 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66e1df232837e1_52002978 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_138412078166dd995bd81370_57778467', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_154563021266e1df23279997_26264491', 'content');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../templates/main.tpl");
 }
 /* {block 'content'} */
-class Block_138412078166dd995bd81370_57778467 extends Smarty_Internal_Block
+class Block_154563021266e1df23279997_26264491 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_138412078166dd995bd81370_57778467',
+    0 => 'Block_154563021266e1df23279997_26264491',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 
+<a href="index.php" class="btn btn-secondary">Powrót do logowania</a>
 
         <h2 class="content-head is-center">Rejestracja</h2>
 

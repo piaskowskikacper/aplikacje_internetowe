@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-09-11 19:49:01
+/* Smarty version 4.3.4, created on 2024-09-11 20:08:53
   from 'E:\Xampp\htdocs\do wyslania\projekt\app\invite.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_66e1d80d98e131_09948345',
+  'unifunc' => 'content_66e1dcb53c2a27_93087184',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6c234d7ff2d9179df075111d4f83b1d123b42e16' => 
     array (
       0 => 'E:\\Xampp\\htdocs\\do wyslania\\projekt\\app\\invite.tpl',
-      1 => 1726076938,
+      1 => 1726078084,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66e1d80d98e131_09948345 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66e1dcb53c2a27_93087184 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_133898152166e1d80d979934_49720381', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_157692434566e1dcb53b4df7_29350431', 'content');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../templates/main.tpl");
 }
 /* {block 'content'} */
-class Block_133898152166e1d80d979934_49720381 extends Smarty_Internal_Block
+class Block_157692434566e1dcb53b4df7_29350431 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_133898152166e1d80d979934_49720381',
+    0 => 'Block_157692434566e1dcb53b4df7_29350431',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -70,7 +70,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <div class="pure-g">
             <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
                 <form class="pure-form pure-form-stacked" action="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
-/app/invite.php" method="post"> 
+/app/send_invitation.php" method="post"> 
                     <fieldset>
 
                     <div>

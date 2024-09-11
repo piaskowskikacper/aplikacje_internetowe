@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-09-08 14:48:15
+/* Smarty version 4.3.4, created on 2024-09-11 20:19:12
   from 'E:\Xampp\htdocs\do wyslania\projekt\app\meetings.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_66dd9d0f95d635_58241295',
+  'unifunc' => 'content_66e1df20604973_33246553',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd305c46cd33fd1131f40bed39f8e4eedce57c052' => 
     array (
       0 => 'E:\\Xampp\\htdocs\\do wyslania\\projekt\\app\\meetings.tpl',
-      1 => 1725798220,
+      1 => 1726078751,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66dd9d0f95d635_58241295 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66e1df20604973_33246553 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_212709504566dd9d0f94d5e9_12612562', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_87691057466e1df205f4c69_16853220', 'content');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../templates/main.tpl");
 }
 /* {block 'content'} */
-class Block_212709504566dd9d0f94d5e9_12612562 extends Smarty_Internal_Block
+class Block_87691057466e1df205f4c69_16853220 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_212709504566dd9d0f94d5e9_12612562',
+    0 => 'Block_87691057466e1df205f4c69_16853220',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -66,7 +66,10 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     </fieldset>
                 </form>
 
-                <p>Nie masz konta? <a href="./app/register.php">Zarejestruj się</a></p>
+                <form class="pure-form pure-form-stacked" action="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
+/app/register.php" method="post"> 
+                <p>Nie masz konta? <button type="submit">Zarejestruj się</button> </p>
+                </form>
 
             </div>
 

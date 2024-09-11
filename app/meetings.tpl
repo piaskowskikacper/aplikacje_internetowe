@@ -20,7 +20,9 @@
                     </fieldset>
                 </form>
 
-                <p>Nie masz konta? <a href="./app/register.php">Zarejestruj się</a></p>
+                <form class="pure-form pure-form-stacked" action="{$app_url}/app/register.php" method="post"> 
+                <p>Nie masz konta? <button type="submit">Zarejestruj się</button> </p>
+                </form>
 
             </div>
 
