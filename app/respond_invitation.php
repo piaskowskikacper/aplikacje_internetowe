@@ -4,40 +4,39 @@ require_once _ROOT_PATH.'/lib/smarty/smarty.class.php';
 
 session_start();
 
-$form = [];
-$msgs = [];
-
+// Sprawdzenie, czy użytkownik jest zalogowany
 if (!isset($_SESSION['username'])) {
-    header('Location: meetings.php');
+    header('Location: meetigns.php');
     exit();
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $invitation_id = intval($_POST['invitation_id']);
-    $action = $_POST['action']; // 'accept' or 'decline'
+try {
+    // Połączenie z bazą danych
+    $conn = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME.";charset=utf8", DB_USER, DB_PASSWORD);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    try {
-        global $pdo;
+    // Pobierz id zalogowanego użytkownika
+    $username = $_SESSION['username'];
+    $stmt = $conn->prepare("SELECT id FROM users WHERE username = :username");
+    $stmt->execute([':username' => $username]);
+    $user = $stmt->fetch();
+    $user_id = $user['id'];
 
-        // Aktualizacja statusu zaproszenia
-        if ($action === 'accept') {
-            $status = 'accepted';
-        } else {
-            $status = 'declined';
-        }
+    // Pobierz zaproszenia dla użytkownika z status 'pending'
+    $stmt = $conn->prepare("
+        SELECT invitations.id AS invitation_id, meetings.title AS meeting_title, meetings.meeting_date 
+        FROM invitations 
+        JOIN meetings ON invitations.meeting_id = meetings.id
+        WHERE invitations.user_id = :user_id AND invitations.status = 'pending'
+    ");
+    $stmt->execute([':user_id' => $user_id]);
+    $invitations = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $stmt = $pdo->prepare("UPDATE invitations SET status = :status WHERE id = :invitation_id AND user_id = :user_id");
-        $stmt->execute([
-            'status' => $status,
-            'invitation_id' => $invitation_id,
-            'user_id' => $_SESSION['user_id']
-        ]);
-
-        $msgs[] = 'Zaproszenie zostało ' . ($action === 'accept' ? 'zaakceptowane.' : 'odrzucone.');
-    } catch (PDOException $e) {
-        $msgs[] = 'Błąd połączenia z bazą danych: ' . $e->getMessage();
-    }
+} catch (PDOException $e) {
+    echo "Błąd połączenia z bazą danych: " . $e->getMessage();
+    die();
 }
+
 
 $smarty = new Smarty();
 $smarty->assign('app_url', _APP_URL);
@@ -47,4 +46,5 @@ $smarty->assign('page_description', 'Odpowiedz na zaproszenie na spotkanie');
 $smarty->assign('page_header', 'Odpowiedź na zaproszenie');
 
 $smarty->assign('messages', $msgs);
+$smarty->assign('invitations', $invitations);
 $smarty->display(_ROOT_PATH.'/app/respond_invitation.tpl');
