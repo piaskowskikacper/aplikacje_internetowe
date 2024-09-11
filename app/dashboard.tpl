@@ -16,7 +16,7 @@
 
 <h2>Witaj, {$username}</h2>
 
-    <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+    <div class="l-box pure-u-1 pure-u-md-3-5">
         {if isset($pending_invitations)}
             <p>Masz {$pending_invitations} zaproszeń, na które nie odpowiedziałeś.</p>
         {/if}
