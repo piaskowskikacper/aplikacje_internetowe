@@ -21,13 +21,29 @@
                 <form class="pure-form pure-form-stacked" action="{$app_url}/app/invite.php" method="post"> 
                     <fieldset>
 
-                    <label for="meeting_id">ID spotkania:</label>
-                    <input type="number" id="meeting_id" name="meeting_id" required>
+                    <div>
+                            <label for="meeting_id">Wybierz spotkanie:</label>
+                            <select name="meeting_id" id="meeting_id">
+                                {foreach from=$meetings item=meeting}
+                                    <option value="{$meeting.id}">{$meeting.title}</option>
+                                {/foreach}
+                            </select>
+                        </div>
 
-                    <label for="user_id">ID użytkownika:</label>
-                    <input type="number" id="user_id" name="user_id" required>
+                        <!-- Lista wyboru użytkowników -->
+                        <div>
+                            <label for="user_id">Wybierz użytkownika:</label>
+                            <select name="user_id" id="user_id">
+                                {foreach from=$users item=user}
+                                    <option value="{$user.id}">{$user.username}</option>
+                                {/foreach}
+                            </select>
+                        </div>
 
-                    <input type="submit" value="Wyślij zaproszenie">
+                        <div>
+                            <button type="submit">Wyślij zaproszenie</button>
+                        </div>
+
                     </fieldset>
                 </form>
 

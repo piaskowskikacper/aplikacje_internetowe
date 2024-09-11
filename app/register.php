@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $msgs[] = 'Adres e-mail jest wymagany.';
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $msgs[] = 'Nieprawidłowy format adresu e-mail.';
-    }
+    } 
     if (empty($password)) {
         $msgs[] = 'Hasło jest wymagane.';
     }

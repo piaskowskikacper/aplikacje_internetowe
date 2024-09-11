@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-09-08 15:34:05
+/* Smarty version 4.3.4, created on 2024-09-11 19:49:01
   from 'E:\Xampp\htdocs\do wyslania\projekt\app\invite.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_66dda7cdb38b74_33917035',
+  'unifunc' => 'content_66e1d80d98e131_09948345',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6c234d7ff2d9179df075111d4f83b1d123b42e16' => 
     array (
       0 => 'E:\\Xampp\\htdocs\\do wyslania\\projekt\\app\\invite.tpl',
-      1 => 1725802429,
+      1 => 1726076938,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66dda7cdb38b74_33917035 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66e1d80d98e131_09948345 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_53531321866dda7cdb2bc85_64420011', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_133898152166e1d80d979934_49720381', 'content');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../templates/main.tpl");
 }
 /* {block 'content'} */
-class Block_53531321866dda7cdb2bc85_64420011 extends Smarty_Internal_Block
+class Block_133898152166e1d80d979934_49720381 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_53531321866dda7cdb2bc85_64420011',
+    0 => 'Block_133898152166e1d80d979934_49720381',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -73,13 +73,47 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 /app/invite.php" method="post"> 
                     <fieldset>
 
-                    <label for="meeting_id">ID spotkania:</label>
-                    <input type="number" id="meeting_id" name="meeting_id" required>
+                    <div>
+                            <label for="meeting_id">Wybierz spotkanie:</label>
+                            <select name="meeting_id" id="meeting_id">
+                                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['meetings']->value, 'meeting');
+$_smarty_tpl->tpl_vars['meeting']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['meeting']->value) {
+$_smarty_tpl->tpl_vars['meeting']->do_else = false;
+?>
+                                    <option value="<?php echo $_smarty_tpl->tpl_vars['meeting']->value['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['meeting']->value['title'];?>
+</option>
+                                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                            </select>
+                        </div>
 
-                    <label for="user_id">ID użytkownika:</label>
-                    <input type="number" id="user_id" name="user_id" required>
+                        <!-- Lista wyboru użytkowników -->
+                        <div>
+                            <label for="user_id">Wybierz użytkownika:</label>
+                            <select name="user_id" id="user_id">
+                                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['users']->value, 'user');
+$_smarty_tpl->tpl_vars['user']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['user']->value) {
+$_smarty_tpl->tpl_vars['user']->do_else = false;
+?>
+                                    <option value="<?php echo $_smarty_tpl->tpl_vars['user']->value['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['user']->value['username'];?>
+</option>
+                                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                            </select>
+                        </div>
 
-                    <input type="submit" value="Wyślij zaproszenie">
+                        <div>
+                            <button type="submit">Wyślij zaproszenie</button>
+                        </div>
+
                     </fieldset>
                 </form>
 
