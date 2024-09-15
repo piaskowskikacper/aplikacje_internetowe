@@ -1,19 +1,18 @@
 <?php
 require_once dirname(__FILE__).'/../config.php';
 
+// Połączenie z bazą danych
+global $pdo;
+
 session_start();
 
 // Sprawdzenie, czy użytkownik jest zalogowany
 if (!isset($_SESSION['username'])) {
-    header('Location: login.php');
+    header('Location: meetings.php');
     exit();
 }
 
 try {
-    // Połączenie z bazą danych
-    $conn = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME.";charset=utf8", DB_USER, DB_PASSWORD);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     // Pobranie danych z formularza
     $meeting_id = isset($_POST['meeting_id']) ? $_POST['meeting_id'] : null;
     $user_id = isset($_POST['user_id']) ? $_POST['user_id'] : null;
@@ -22,7 +21,7 @@ try {
     if ($meeting_id && $user_id) {
 
         // Sprawdzenie, czy zaproszenie już istnieje
-        $stmt = $conn->prepare("SELECT * FROM invitations WHERE meeting_id = :meeting_id AND user_id = :user_id");
+        $stmt = $pdo->prepare("SELECT * FROM invitations WHERE meeting_id = :meeting_id AND user_id = :user_id");
         $stmt->execute([':meeting_id' => $meeting_id, ':user_id' => $user_id]);
         $existing_invitation = $stmt->fetch();
 
@@ -37,7 +36,7 @@ try {
             exit();
         } else {
             // Jeśli zaproszenie nie istnieje, wysyłamy nowe
-            $stmt = $conn->prepare("INSERT INTO invitations (meeting_id, user_id, status) VALUES (:meeting_id, :user_id, 'pending')");
+            $stmt = $pdo->prepare("INSERT INTO invitations (meeting_id, user_id, status) VALUES (:meeting_id, :user_id, 'pending')");
             $stmt->execute([':meeting_id' => $meeting_id, ':user_id' => $user_id]);
 
             // Wyświetlenie komunikatu o sukcesie i przekierowanie

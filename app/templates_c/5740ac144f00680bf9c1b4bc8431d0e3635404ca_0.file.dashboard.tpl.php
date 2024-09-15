@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-09-11 22:19:13
+/* Smarty version 4.3.4, created on 2024-09-15 21:30:14
   from 'E:\Xampp\htdocs\do wyslania\projekt\app\dashboard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_66e1fb415327a0_19024448',
+  'unifunc' => 'content_66e735c60c05e8_87910416',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5740ac144f00680bf9c1b4bc8431d0e3635404ca' => 
     array (
       0 => 'E:\\Xampp\\htdocs\\do wyslania\\projekt\\app\\dashboard.tpl',
-      1 => 1726085952,
+      1 => 1726428599,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66e1fb415327a0_19024448 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66e735c60c05e8_87910416 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_145736212466e1fb4151b893_56603675', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4304888766e735c60709d5_75936565', 'content');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../templates/main.tpl");
 }
 /* {block 'content'} */
-class Block_145736212466e1fb4151b893_56603675 extends Smarty_Internal_Block
+class Block_4304888766e735c60709d5_75936565 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_145736212466e1fb4151b893_56603675',
+    0 => 'Block_4304888766e735c60709d5_75936565',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -64,8 +64,8 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'E:\\Xampp\\htdocs\\dowyslani
 
     <div class="l-box pure-u-1 pure-u-md-3-5">
         <?php if ((isset($_smarty_tpl->tpl_vars['pending_invitations']->value))) {?>
-            <p>Masz <?php echo $_smarty_tpl->tpl_vars['pending_invitations']->value;?>
- zaproszeń, na które nie odpowiedziałeś.</p>
+            <p>Masz <b><?php echo $_smarty_tpl->tpl_vars['pending_invitations']->value;?>
+</b> zaproszeń, na które nie odpowiedziałeś.</p>
         <?php }?>
 
         <h3>Nadchodzące spotkania</h3>

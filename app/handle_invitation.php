@@ -3,17 +3,15 @@ require_once dirname(__FILE__).'/../config.php';
 
 session_start();
 
-// Sprawdzenie, czy użytkownik jest zalogowany
+// Połączenie z bazą danych
+global $pdo;
+
 if (!isset($_SESSION['username'])) {
     header('Location: meetings.php');
     exit();
 }
 
 try {
-    // Połączenie z bazą danych
-    $conn = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME.";charset=utf8", DB_USER, DB_PASSWORD);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     // Pobranie danych z formularza
     if (isset($_POST['invitation_id']) && isset($_POST['action'])) {
         $invitation_id = $_POST['invitation_id'];
@@ -30,7 +28,7 @@ try {
         }
 
         // Aktualizacja statusu zaproszenia
-        $stmt = $conn->prepare("UPDATE invitations SET status = :status WHERE id = :invitation_id");
+        $stmt = $pdo->prepare("UPDATE invitations SET status = :status WHERE id = :invitation_id");
         $stmt->execute([':status' => $status, ':invitation_id' => $invitation_id]);
 
         // Przekierowanie z powrotem na stronę zaproszeń

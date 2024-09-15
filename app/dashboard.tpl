@@ -18,7 +18,7 @@
 
     <div class="l-box pure-u-1 pure-u-md-3-5">
         {if isset($pending_invitations)}
-            <p>Masz {$pending_invitations} zaproszeń, na które nie odpowiedziałeś.</p>
+            <p>Masz <b>{$pending_invitations}</b> zaproszeń, na które nie odpowiedziałeś.</p>
         {/if}
 
         <h3>Nadchodzące spotkania</h3>

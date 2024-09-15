@@ -2,28 +2,27 @@
 require_once dirname(__FILE__).'/../config.php';
 require_once _ROOT_PATH.'/lib/smarty/smarty.class.php';
 
+// Połączenie z bazą danych
+global $pdo;
+
 session_start();
 
 // Sprawdzenie, czy użytkownik jest zalogowany
 if (!isset($_SESSION['username'])) {
-    header('Location: meetigns.php');
+    header('Location: meetings.php');
     exit();
 }
 
 try {
-    // Połączenie z bazą danych
-    $conn = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME.";charset=utf8", DB_USER, DB_PASSWORD);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     // Pobierz id zalogowanego użytkownika
     $username = $_SESSION['username'];
-    $stmt = $conn->prepare("SELECT id FROM users WHERE username = :username");
+    $stmt = $pdo->prepare("SELECT id FROM users WHERE username = :username");
     $stmt->execute([':username' => $username]);
     $user = $stmt->fetch();
     $user_id = $user['id'];
 
     // Pobierz zaproszenia dla użytkownika z status 'pending'
-    $stmt = $conn->prepare("
+    $stmt = $pdo->prepare("
         SELECT invitations.id AS invitation_id, meetings.title AS meeting_title, meetings.meeting_date 
         FROM invitations 
         JOIN meetings ON invitations.meeting_id = meetings.id
