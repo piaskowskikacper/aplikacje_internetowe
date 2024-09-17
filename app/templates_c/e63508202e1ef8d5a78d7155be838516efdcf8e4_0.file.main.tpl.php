@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-09-08 15:30:32
+/* Smarty version 4.3.4, created on 2024-09-17 17:26:05
   from 'E:\Xampp\htdocs\do wyslania\projekt\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_66dda6f8572ab5_50985979',
+  'unifunc' => 'content_66e99f8d6dc6a3_17972578',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e63508202e1ef8d5a78d7155be838516efdcf8e4' => 
     array (
       0 => 'E:\\Xampp\\htdocs\\do wyslania\\projekt\\templates\\main.tpl',
-      1 => 1725802230,
+      1 => 1726586761,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66dda6f8572ab5_50985979 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66e99f8d6dc6a3_17972578 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -35,6 +35,26 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
 /styles/styles.css">
+    <?php echo '<script'; ?>
+ src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/tinymce.min.js" referrerpolicy="origin"><?php echo '</script'; ?>
+>
+
+    <?php echo '<script'; ?>
+>
+      tinymce.init({
+        selector: '#description',
+        plugins: [
+          'a11ychecker','advlist','advcode','advtable','autolink','checklist','markdown',
+          'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
+          'powerpaste','fullscreen','formatpainter','insertdatetime','media','table','help','wordcount'
+        ],
+        toolbar: 'undo redo | formatpainter casechange blocks | bold italic backcolor | ' +
+          'alignleft aligncenter alignright alignjustify | ' +
+          'bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
+      });
+    <?php echo '</script'; ?>
+>
+
 </head>
 <body>
 
@@ -65,14 +85,14 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 
     <div class="content">
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_156122456166dda6f8571876_94050410', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_204864025066e99f8d6da5e4_45244279', 'content');
 ?>
 
     </div>
 
     <div class="footer l-box is-center">
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_135187819466dda6f8572392_36885544', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6780078366e99f8d6dbed3_87156646', 'footer');
 ?>
 
     </div>
@@ -85,12 +105,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_135187819466dda6f8
 </html>
 <?php }
 /* {block 'content'} */
-class Block_156122456166dda6f8571876_94050410 extends Smarty_Internal_Block
+class Block_204864025066e99f8d6da5e4_45244279 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_156122456166dda6f8571876_94050410',
+    0 => 'Block_204864025066e99f8d6da5e4_45244279',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -100,12 +120,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'footer'} */
-class Block_135187819466dda6f8572392_36885544 extends Smarty_Internal_Block
+class Block_6780078366e99f8d6dbed3_87156646 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_135187819466dda6f8572392_36885544',
+    0 => 'Block_6780078366e99f8d6dbed3_87156646',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
